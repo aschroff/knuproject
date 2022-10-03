@@ -1,0 +1,20 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Einzelwert</h1>
+ {% if value %}
+    <ul>
+        <li>Quelle: {{ value.source }}</li>
+        <li>Fakt: {{ value.fact }}</li>
+        <li>Wert: {{ value.value }}</li>
+        <li>Einheit: {{ value.unit }}</li>
+    </ul>
+{% else %}
+    <p>Kein Wert verfügbar.</p>
+{% endif %}
+
+
+
+{% endblock %}
+
+
