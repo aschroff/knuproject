@@ -1,58 +1,63 @@
-{%  extends 'base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
     {% load plotly_dash %}
-  <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">K.N.U.</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-          </div>
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">K.N.U.</h1>
+        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+    </div>
 
     <div class="row">
 
-   <!-- Area Chart -->
-<div class="col-xl-12 col-lg-12">
-    <div class="card shadow mb-4">
-    <!-- Card Header - Dropdown -->
-        <div
-            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">CO2 Ausstoss</h6>
-            <div class="dropdown no-arrow">
-                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                 aria-labelledby="dropdownMenuLink">
-                 <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
+        <!-- Area Chart -->
+        <div class="col-xl-12 col-lg-12">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div
+                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">CO2 Ausstoss</h6>
+                    <div class="dropdown no-arrow">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                             aria-labelledby="dropdownMenuLink">
+                            <div class="dropdown-header">Dropdown Header:</div>
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
                 </div>
-               </div>
-            </div>
-            <!-- Card Body -->
-            <div class="card-body">Übersicht 2022 - 2035</div>
+                <!-- Card Body -->
+                <div class="card-body">Übersicht 2022 - 2035</div>
 
-            <div class="{% plotly_class name='SimpleExample' %} card" style="height: 100%; width: 100%">
-                {% plotly_app name='SimpleExample' ratio=0.75 %}
-            </div>
+                <div class="{% plotly_class name='SimpleExample' %} card" style="height: 100%; width: 100%">
+                    {% plotly_app name='SimpleExample' ratio=0.75 %}
+                </div>
             </div>
         </div>
     </div>
 
 
-        <!-- Card Body -->
-          {% if value_list %}
-            <ul>
+    <!-- Card Body -->
+    {% if value_list %}
+        <ul>
             {% for value in value_list %}
-                <li>{{ value.fact }} = <a href="/knu/{{ value.id }}/">{{ value.value }}</a> {{ value.unit }}</li>
+                <li>{{ value.fact }} = <a href={% url 'knu:value' value_id=value.id %}>{{ value.value }}</a> {{ value.unit }}</li>
+
             {% endfor %}
-            </ul>
-        {% else %}
-            <p>No values are available.</p>
-        {% endif %}
+            {% if value_list|length == 5 %}
+                <li><a href={% url 'knu:index' %}>...</a></li>
+            {% endif %}
+        </ul>
+    {% else %}
+        <p>No values are available.</p>
+    {% endif %}
 {% endblock %}
 
 

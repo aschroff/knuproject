@@ -24,7 +24,7 @@ def value(request, value_id):
     return render(request, 'knu/detail.html', {'value': valueobject})
 
 def index(request):
-    value_list = Value.objects.order_by('-source')[:5]
+    value_list = Value.objects.order_by('-source')
     context = {
         'value_list': value_list,
     }

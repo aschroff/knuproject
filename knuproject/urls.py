@@ -23,12 +23,13 @@ from knu.dash_apps.finished_apps import dash_apps      # pylint: disable=unused-
 from knu.dash_apps.finished_apps import bootstrap_app  # pylint: disable=unused-import
 
 from django_plotly_dash.views import add_to_session
-
+from knu import views
 
 
 urlpatterns = [
     path('knu/', include('knu.urls')),
+    path('', include('knu.urls')),
     path('admin/', admin.site.urls),
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
-    path('demo-one', TemplateView.as_view(template_name='Demo1.html'), name="demo-one"),
+
 ]

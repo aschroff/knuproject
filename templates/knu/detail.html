@@ -1,5 +1,6 @@
 {%  extends 'base.html' %}
 {% load static %}
+{% load admin_urls %}
 {% block content %}
 <h1>Einzelwert</h1>
  {% if value %}
@@ -8,6 +9,7 @@
         <li>Fakt: {{ value.fact }}</li>
         <li>Wert: {{ value.value }}</li>
         <li>Einheit: {{ value.unit }}</li>
+        <li><a href={% url 'admin:knu_value_change' value.id %}>Ändern</a></li>
     </ul>
 {% else %}
     <p>Kein Wert verfügbar.</p>
