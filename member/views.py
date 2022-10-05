@@ -22,4 +22,8 @@ def login_user(request):
 
         return render(request, 'authenticate/login.html', {})
 
+def logout_user(request):
+    logout(request)
+    messages.success(request, ("Du bist abgemeldet"))
+    return redirect('knu:home')
 # Create your views here.
