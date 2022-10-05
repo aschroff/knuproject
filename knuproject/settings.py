@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'channels_redis',
     'dpd_static_support',
     'bootstrap4',
+    'member.apps.MemberConfig',
 ]
 
 MIDDLEWARE = [

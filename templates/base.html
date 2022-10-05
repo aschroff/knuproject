@@ -46,6 +46,20 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+            {% if messages %}
+                <div class="col-lg-6 mb-4">
+                     <div class="card bg-danger text-white shadow">
+                        <div class="card-body">
+
+                                {% for message in messages %}
+                                     {{ message }}
+                                {% endfor %}
+
+                        </div>
+                     </div>
+                </div>
+            {% endif %}
+
 
 
             {% block content %}
@@ -85,7 +99,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href={% url 'member:login' %}>Logout</a>
         </div>
       </div>
     </div>

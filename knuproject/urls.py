@@ -29,6 +29,8 @@ from knu import views
 urlpatterns = [
     path('knu/', include('knu.urls')),
     path('', include('knu.urls')),
+    path('member/', include('django.contrib.auth.urls')),
+    path('member/', include('member.urls')),
     path('admin/', admin.site.urls),
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
 
