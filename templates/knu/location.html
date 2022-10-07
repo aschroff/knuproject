@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% load plotly_dash %}
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">K.N.U.</h1>
+    </div>
+
+                <div class="{% plotly_class name='Location' %} card" style="height: 100%; width: 100%">
+                    {% plotly_app name='Location' ratio=1 %}
+                </div>
+{% endblock %}
+
+

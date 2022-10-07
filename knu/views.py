@@ -30,3 +30,10 @@ def index(request):
     }
     return render(request, 'knu/index.html', context)
 
+def location(request):
+    value_list = Value.objects.order_by('-source')[:5]
+    context = {
+        'value_list': value_list,
+    }
+    return render(request, 'knu/location.html', context)
+

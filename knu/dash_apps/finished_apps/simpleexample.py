@@ -8,10 +8,9 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = DjangoDash('SimpleExample', external_stylesheets=external_stylesheets)
 
-
 app.layout = html.Div([
     html.H1('Ubstadt-Weiher Quo Vadis 1'),
-    dcc.Graph(id='slider-graph', animate=True, style={"backgroundColor": "#1a2d46", 'color': '#ffffff'}),
+    dcc.Graph(id='slider-graph',  animate=True, style={"backgroundColor": "#1a2d46", 'color': '#ffffff'}),
     dcc.Slider(
         id='slider-updatemode',
         marks={i: '{}'.format(i) for i in range(20)},
