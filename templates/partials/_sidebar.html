@@ -34,9 +34,10 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">KNU Bereiche:</h6>
-            <a class="collapse-item" href="buttons.html">KNU Bereich 1</a>
-            <a class="collapse-item" href="cards.html">KNU Beeich 2</a>
+            <h6 class="collapse-header">KNU Berechnungen:</h6>
+               {% for e in evals %}
+                     <a class="collapse-item" href={% url 'knu:eval' eval_id=e.id %}>{{ e.eval_text }}</a>
+               {% endfor %}
           </div>
         </div>
       </li>
@@ -50,10 +51,10 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Szenario:</h6>
-            <a class="collapse-item" href="utilities-color.html">KNU Szenario 1</a>
-            <a class="collapse-item" href="utilities-border.html">KNU Szenario 2</a>
-            <a class="collapse-item" href="utilities-animation.html">KNU Szenario 3</a>
-            <a class="collapse-item" href="utilities-other.html">Weitere</a>
+                  {% for sc in main_scenarios %}
+                     <a class="collapse-item" href={% url 'knu:scenario' scenario_id=sc.id %}>{{ sc.scenario_text }}</a>
+                  {% endfor %}
+            <a class="collapse-item" href="utilities-other.html">Weitere...</a>
           </div>
         </div>
       </li>

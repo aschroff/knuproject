@@ -10,7 +10,6 @@
     </div>
 
     <div class="row">
-
         <!-- Area Chart -->
         <div class="col-xl-12 col-lg-12">
             <div class="card shadow mb-4">
@@ -36,7 +35,7 @@
                 <!-- Card Body -->
 
                 <div class="{% plotly_class name='Location' %} card" style="height: 100%; width: 100%">
-                    {% plotly_app name='Location' ratio=1 %}
+                    {% plotly_app name='Location' ratio=0.6 %}
                 </div>
             </div>
         </div>
@@ -90,6 +89,8 @@
     {% else %}
         <p>No values are available.</p>
     {% endif %}
+
+
 {% endblock %}
 
 

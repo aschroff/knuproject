@@ -76,6 +76,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'knu.context_processors.get_main_scenarios_context',
+                'knu.context_processors.get_eval_context',
             ],
         },
     },

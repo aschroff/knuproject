@@ -1,0 +1,12 @@
+{% if scenarios %}
+  <ul>
+    {% for scenario in scenarios %}
+      <li><a href={% url 'admin:knu_scenario_change' scenario.id %}>{{ scenario.scenario_text }}</a>
+        {# recursively include template itself #}
+        {% with scenarios=scenario.mothers.all template_name="scenario_rec.html" %}
+          {% include "knu/scenario_rec.html" %}
+        {%endwith%}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

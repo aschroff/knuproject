@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
-from .models import Value
+from .models import Value, Scenario, Eval
 from plotly.offline import plot
 import plotly.graph_objects as go
 
@@ -37,3 +37,16 @@ def location(request):
     }
     return render(request, 'knu/location.html', context)
 
+def scenario(request, scenario_id):
+    scenarioobject = get_object_or_404(Scenario, pk=scenario_id)
+    context = {
+        'scenario': scenarioobject,
+    }
+    return render(request, 'knu/scenario.html', {'scenario': scenarioobject})
+
+def eval(request, eval_id):
+    evalobject = get_object_or_404(Eval, pk=eval_id)
+    context = {
+        'eval': evalobject,
+    }
+    return render(request, 'knu/eval.html', {'eval': evalobject})

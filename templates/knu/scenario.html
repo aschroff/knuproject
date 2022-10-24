@@ -1,0 +1,26 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% load admin_urls %}
+{% block content %}
+ {% if scenario %}
+    <h1>{{ scenario.scenario_text }}</h1>
+    <ul
+        Szenario: <a href={% url 'admin:knu_scenario_change' scenario.id %}>{{ scenario.scenario_text }}</a><br>
+        Beschreibung: {{ scenario.description }}<br><br>
+        Einflussfaktoren: <br>
+        {% for impact in scenario.impacts.all %}
+            <li> {{ impact.impact_text }}</li>
+        {% endfor %}
+        <br>
+        Ableitung:
+        {% include "knu/scenario_rec.html" with scenarios=scenario.mothers.all %}
+    </ul>
+ {% else %}
+    <p>Fehler: Kein Szenario verfügbar.</p>
+{% endif %}
+
+
+
+{% endblock %}
+
+

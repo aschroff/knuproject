@@ -9,4 +9,6 @@ urlpatterns = [
     path('index/', views.index, name='index'),
     path('<int:value_id>/value/', views.value, name='value'),
     path('location', views.location, name='location'),
+    path('<int:scenario_id>/scenario/', views.scenario, name='scenario'),
+    path('<int:eval_id>/eval/', views.eval, name='eval'),
 ]
