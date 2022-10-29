@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-od#aedc^))7(ej2)w(99&1s9k3y%whdjmt+f*&!#)1k%xgq*6#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ebknu.eba-gn9mgbnp.eu-central-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['ebknu.eba-gn9mgbnp.eu-central-1.elasticbeanstalk.com',
+                 '127.0.0.1']
 
 
 # Application definition
@@ -89,12 +90,28 @@ WSGI_APPLICATION = 'knuproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if 'RDS_DB_NAME' in os.environ:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.environ['RDS_DB_NAME'],
+            'USER': os.environ['RDS_USERNAME'],
+            'PASSWORD': os.environ['RDS_PASSWORD'],
+            'HOST': os.environ['RDS_HOSTNAME'],
+            'PORT': os.environ['RDS_PORT'],
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'postgres',
+            'USER': 'postgres',
+            'PASSWORD': 'wurstkalb',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    }
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
