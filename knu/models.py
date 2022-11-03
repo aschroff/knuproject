@@ -118,3 +118,4 @@ class SelectEval(models.Model):
     dimension = models.ForeignKey(Dimension, on_delete=models.CASCADE)
     def __str__(self):
         return self.dimension.dimension_text + ' = ' + self.select_txt
+
