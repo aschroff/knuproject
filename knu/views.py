@@ -23,12 +23,14 @@ def value(request, value_id):
     }
     return render(request, 'knu/detail.html', {'value': valueobject})
 
+
 def index(request):
     value_list = Value.objects.order_by('-source')
     context = {
         'value_list': value_list,
     }
     return render(request, 'knu/index.html', context)
+
 
 def location(request):
     value_list = Value.objects.order_by('-source')[:5]
@@ -37,12 +39,14 @@ def location(request):
     }
     return render(request, 'knu/location.html', context)
 
+
 def scenario(request, scenario_id):
     scenarioobject = get_object_or_404(Scenario, pk=scenario_id)
     context = {
         'scenario': scenarioobject,
     }
     return render(request, 'knu/scenario.html', {'scenario': scenarioobject})
+
 
 def eval(request, eval_id):
     evalobject = get_object_or_404(Eval, pk=eval_id)

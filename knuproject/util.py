@@ -52,3 +52,4 @@ def anzeige(*args):
         returnwert = returnwert + z
     print(returnwert)
     return returnwert
+
