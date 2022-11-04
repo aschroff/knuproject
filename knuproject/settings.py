@@ -109,7 +109,7 @@ else:
             'USER': 'andreasschroff',
             'PASSWORD': 'wurstkalb',
             'HOST': 'awseb-e-axgkmgw9ne-stack-awsebrdsdatabase-k4zgr8qptk8d.cezmyhtk12bq.eu-central-1.rds.amazonaws.com',
-            'PORT': '6432',
+            'PORT': '5432',
         #    'NAME': 'postgres',
         #    'USER': 'postgres',
         #    'PASSWORD': 'wurstkalb',
