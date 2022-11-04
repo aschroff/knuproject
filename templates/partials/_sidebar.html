@@ -75,14 +75,14 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+            <h6 class="collapse-header">Hilfseiten:</h6>
+            <a class="collapse-item" href={% url 'member:login' %}>Anmelden</a>
+            <a class="collapse-item" href="register.html">TODO Registrieren</a>
+            <a class="collapse-item" href="forgot-password.html">TODO Passwort vergessen</a>
+            <a class="collapse-item" href={% url 'admin:login' %}>Adminportal inkl Datenpflege</a>
             <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="blank.html">Blank Page</a>
+            <h6 class="collapse-header">Sonstiges:</h6>
+            <a class="collapse-item" href="404.html">TODO 404 Page</a>
           </div>
         </div>
       </li>
