@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-od#aedc^))7(ej2)w(99&1s9k3y%whdjmt+f*&!#)1k%xgq*6#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ebknu.eba-gn9mgbnp.eu-central-1.elasticbeanstalk.com',
+ALLOWED_HOSTS = ['knusper.eba-8exz64xp.eu-central-1.elasticbeanstalk.com',
                  '127.0.0.1']
 
 
@@ -106,10 +106,15 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'postgres',
-            'USER': 'postgres',
+            'USER': 'andreasschroff',
             'PASSWORD': 'wurstkalb',
             'HOST': 'localhost',
             'PORT': '5432',
+        #    'NAME': 'postgres',
+        #    'USER': 'postgres',
+        #    'PASSWORD': 'wurstkalb',
+        #    'HOST': 'localhost',
+        #    'PORT': '5432',
         }
     }
 
