@@ -109,7 +109,7 @@ else:
             'USER': 'andreasschroff',
             'PASSWORD': 'wurstkalb',
             'HOST': 'localhost',
-            'PORT': '5432',
+            'PORT': '6432',
         #    'NAME': 'postgres',
         #    'USER': 'postgres',
         #    'PASSWORD': 'wurstkalb',
