@@ -108,7 +108,7 @@ else:
             'NAME': 'postgres',
             'USER': 'andreasschroff',
             'PASSWORD': 'wurstkalb',
-            'HOST': 'localhost',
+            'HOST': 'awseb-e-axgkmgw9ne-stack-awsebrdsdatabase-k4zgr8qptk8d.cezmyhtk12bq.eu-central-1.rds.amazonaws.com',
             'PORT': '6432',
         #    'NAME': 'postgres',
         #    'USER': 'postgres',
