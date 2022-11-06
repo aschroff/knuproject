@@ -89,7 +89,7 @@ class Scenario(models.Model):
     scenario_text = models.CharField(max_length=40)
     description = models.CharField(max_length=200)
     inheritance = models.ManyToManyField('self', related_name='mothers', symmetrical=False)
-    prio = models.CharField(max_length=1)
+    prio = models.CharField(max_length=1, default = 'C')
     def __str__(self):
         return self.scenario_text
 

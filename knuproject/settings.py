@@ -105,13 +105,14 @@ if 'RDS_DB_NAME' in os.environ:
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'ENGINE': 'django.db.backends.postgresql_p'
+                      'sycopg2',
             'NAME': 'postgres',
             'USER': 'postgres',
             'PASSWORD': 'wurstkalb',
             'HOST': 'awseb-e-symb5xuppi-stack-awsebrdsdatabase-tyzxabzfm6hg.cezmyhtk12bq.eu-central-1.rds.amazonaws.com',
+           # 'HOST': '127.0.0.1',
             'PORT': '5432',
-        #    'NAME': 'postgres',
         #    'USER': 'postgres',
         #    'PASSWORD': 'wurstkalb',
         #    'HOST': 'localhost',

@@ -23,7 +23,7 @@ class ScenarioMother(admin.TabularInline):
 
 class ScenarioAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields': ['scenario_text', 'description']}),
+        (None, {'fields': ['scenario_text', 'description', 'prio']}),
     ]
     inlines = [ScenarioMother, ImpactInline]
 
