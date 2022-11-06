@@ -10,6 +10,6 @@ class Command(BaseCommand):
         if not User.objects.filter(username='admin').exists():
             User.objects.create_superuser(
                 username=os.environ['RDS_USERNAME'],
-                password=os.environ['RDS_PASSWORD']
+                password=os.environ['RDS_PASSWORD'],
             )
         print('Superuser has been created.')
