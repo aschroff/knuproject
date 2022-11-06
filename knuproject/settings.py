@@ -106,9 +106,9 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'postgres',
-            'USER': 'andreasschroff',
+            'USER': 'postgres',
             'PASSWORD': 'wurstkalb',
-            'HOST': 'awseb-e-axgkmgw9ne-stack-awsebrdsdatabase-k4zgr8qptk8d.cezmyhtk12bq.eu-central-1.rds.amazonaws.com',
+            'HOST': 'awseb-e-symb5xuppi-stack-awsebrdsdatabase-tyzxabzfm6hg',
             'PORT': '5432',
         #    'NAME': 'postgres',
         #    'USER': 'postgres',
